@@ -9,7 +9,7 @@ class MyHomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar:
-            AppBar(backgroundColor: Colors.black, title: const Text('Islam')),
+            AppBar(backgroundColor: Colors.black, title: const Text('Islami')),
         backgroundColor: Colors.grey,
         body: const Center(
           child: Text('text'),
