@@ -8,12 +8,11 @@ class MyHomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-            backgroundColor: Colors.black,
-            title: const Text('Islami')
-        ),
+        appBar:
+            AppBar(backgroundColor: Colors.black, title: const Text('Islam')),
         backgroundColor: Colors.grey,
-        body:
-    );
+        body: const Center(
+          child: Text('text'),
+        ));
   }
 }
