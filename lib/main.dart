@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami/splash_screen.dart';
 
 import 'home_screen.dart';
 
@@ -15,8 +16,11 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData.dark(),
       debugShowCheckedModeBanner: false,
       title: 'Islami',
-      initialRoute: MyHomeScreen.route,
-      routes: {MyHomeScreen.route: (_) => const MyHomeScreen()},
+      initialRoute: SplashScreen.route,
+      routes: {
+        MyHomeScreen.route: (_) => const MyHomeScreen(),
+        SplashScreen.route: (_) => const SplashScreen()
+      },
     );
   }
 }
