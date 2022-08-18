@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'bottom_navigation_item.dart';
+
 class MyHomeScreen extends StatelessWidget {
   static const String route = 'home';
 
@@ -26,23 +28,18 @@ class MyHomeScreen extends StatelessWidget {
                       fontStyle: FontStyle.italic,
                       color: Colors.black)),
             )),
-        bottomNavigationBar:
-            BottomNavigationBar(backgroundColor: Colors.brown, items: const [
-          BottomNavigationBarItem(
-              icon: ImageIcon(AssetImage('assets/icons/radio.png'),
-                  color: Colors.white),
-              label: 'Radio',
-              tooltip: 'Radio'),
-          BottomNavigationBarItem(
-              icon: ImageIcon(AssetImage('assets/3x/sebha.png')),
-              label: 'Sebha'),
-          BottomNavigationBarItem(
-              icon: ImageIcon(AssetImage('assets/3x/hadeth.png')),
-              label: 'Hadith'),
-          BottomNavigationBarItem(
-              icon: ImageIcon(AssetImage('assets/3x/quran.png')),
-              label: 'Quran'),
-        ]),
+        bottomNavigationBar: BottomNavigationBar(
+            iconSize: 35,
+            unselectedItemColor: Colors.white,
+            fixedColor: Colors.black,
+            backgroundColor: Colors.brown,
+            type: BottomNavigationBarType.fixed,
+            items: [
+              MyBottomNavigationItem(path: 'assets/radio.png', tip: 'Radio'),
+              MyBottomNavigationItem(path: 'assets/sebha.png', tip: 'Sebha'),
+              MyBottomNavigationItem(path: 'assets/hadith.png', tip: 'Hadith'),
+              MyBottomNavigationItem(path: 'assets/quran.png', tip: 'Quran')
+            ]),
         backgroundColor: Colors.transparent,
       ),
     );
