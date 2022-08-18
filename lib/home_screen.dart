@@ -9,30 +9,28 @@ class MyHomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
+    String image = isDarkMode ? 'assets/bg.png' : 'assets/bg3.png';
     return Container(
-      decoration: const BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage(
-                'assets/bg3.png',
-              ),
-              fit: BoxFit.fill)),
+      decoration: BoxDecoration(
+          image: DecorationImage(image: AssetImage(image), fit: BoxFit.fill)),
       child: Scaffold(
         appBar: AppBar(
             backgroundColor: Colors.transparent,
             elevation: 0,
-            title: const Center(
+            title: Center(
               child: Text('اسلامي',
                   style: TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.w500,
                       fontStyle: FontStyle.italic,
-                      color: Colors.black)),
+                      color: isDarkMode ? Colors.white : Colors.black)),
             )),
         bottomNavigationBar: BottomNavigationBar(
             iconSize: 35,
             unselectedItemColor: Colors.white,
-            fixedColor: Colors.black,
-            backgroundColor: Colors.brown,
+            fixedColor: isDarkMode ? Colors.orangeAccent : Colors.black,
+            backgroundColor: isDarkMode ? Colors.black : Colors.brown,
             type: BottomNavigationBarType.fixed,
             items: [
               MyBottomNavigationItem(path: 'assets/radio.png', tip: 'Radio'),
